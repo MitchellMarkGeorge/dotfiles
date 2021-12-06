@@ -8,7 +8,7 @@ echo "Installing Homebrew"
 echo "Installing Git"
 brew install git
 
-echo "Config Git email"
+echo "Config Git"
 git config --global user.name "Mitchell Mark-George"
 
 echo "Installing Zsh"
@@ -29,26 +29,30 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 echo "Install Powerlevel 10k"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
-# p10k configure 
 # think about this
 
-echo "REMEMBER: ADD ALL ZSH PLUGINS TO .ZSHRC FILE!!!"
 # should try and haave that automatically setup with .zshrc in dotfiles
 
+# should I use a Brewfile instead?
 packages=(
     python
     node
     go
+    typescript
     # vim -> macvim installs vim
     neovim
     chezmoi 
 )
 
 # chezmoi -> used to manage dotfiles
+chezmoi init https://github.com/MitchellMarkGeorge/dotfiles.git
+
+p10k configure 
+
+source ~/.zshrc
 
 echo "Installing packages"
 brew install ${packages[@]}
-
 
 apps=(
     appcleaner
@@ -66,5 +70,3 @@ apps=(
 
 echo "Installing apps"
 brew install --cask ${apps[@]}
-
-chezmoi init https://github.com/MitchellMarkGeorge/dotfiles.git
