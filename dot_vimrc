@@ -1,0 +1,227 @@
+" This must be first, because it changes other options as side effect
+set nocompatible
+
+"function to create swap and backup folders
+" make sure this is correct!
+function! EnsureDirExists (dir)
+    if !isdirectory(a:dir)
+        "check if builtin mkdir function exists
+        if exists("*mkdir")
+            "flag if error happened 
+            " let l:haserror = 0
+            try
+                call mkdir(a:dir,'p')
+            catch /.*/    
+                echo 'Error making' . a:dir 
+                " let l:haserror = 1
+            endtry 
+            " if no error print this out 
+            " if (l:haserror == 0)
+            "    echo "Created directory: " . a:dir 
+            " endif
+        else 
+            echo "Please create directory: " . a:dir
+        endif
+    endif
+endfunction
+
+
+
+call EnsureDirExists($HOME.'/.vim_swaps')
+call EnsureDirExists($HOME.'/.vim_backups')
+
+
+" can also use this as well
+" if !isdirectory("/my/directory")
+"     call mkdir("/my/directory", "p")
+" endif
+
+
+
+" function! EnsureDirExists (dir)
+"   if !isdirectory(a:dir)
+"     " check is built in mkdir exists
+"     if exists("*mkdir")
+"      
+"       try
+"         call mkdir(a:dir,'p')
+"         catch /.*/
+"             echo 'Error making '. a:dir
+"         endtry
+"         echo "Created directory: " . a:dir
+"         else
+"         echo "Please create directory: " . a:dir
+"         endif
+"     endif
+" endfunction
+
+call plug#begin('~/.vim/plugged')
+
+" dont want to have too many plugins
+
+" theme
+Plug 'ayu-theme/ayu-vim'
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+" https://github.com/prettier/vim-prettier
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+
+
+" statusline
+Plug 'itchyny/lightline.vim'
+
+Plug 'airblade/vim-gitgutter'
+
+" ALL I NEED IS LINTING AND FORMATTING
+
+"THINK ABOUT THIS
+"autocomplete stuff
+" https://github.com/maralla/completor.vim
+"
+" will disable this for now
+"Plug 'maralla/completor.vim'
+
+" fuzzy file and buffer finder
+Plug 'ctrlpvim/ctrlp.vim'
+
+" commets things out
+Plug 'preservim/nerdcommenter'
+
+" automatic bracket/parentheses closing
+Plug 'jiangmiao/auto-pairs'
+
+" honestly not going to use this
+Plug 'tpope/vim-fugitive'
+" is this needed
+Plug 'MaxMEllon/vim-jsx-pretty'
+
+call plug#end()
+
+" https://github.com/airblade/vim-gitgutter#getting-started (also controls
+" frequency of swapfile writes)
+
+" needed to get terminal gui colors working correctly
+set termguicolors
+
+" set dirs to stor swap and back up dile
+set backupdir=$HOME/.vim_backups//
+set directory=$HOME/.vim_swaps//
+
+" make all json files json with comment files
+augroup JsonToJsonc
+    autocmd! FileType json set filetype=jsonc
+augroup END
+
+
+" Under the command mode, the bottom-layer operation instructions will be completed automatically by pressing the Tab key. 
+"The first time you press Tab, a list of all matched operation instructions will be displayed; and the second time you press Tab, each instruction will be selected in turn.
+set wildmenu
+set wildmode=longest:list,full
+
+" Enable use of the mouse for all modes
+set mouse=a
+
+" Allow hidden buffers (essentially allow editing multiple bufferes without saving immediately)
+set hidden
+
+" Show partial commands in the last line of the screen
+set showcmd
+
+" show current mode (is this needed)
+" set showmode
+" dont show mode as it is already in the status line
+set noshowmode
+
+
+set encoding=utf-8
+
+" this is for git gutter
+set updatetime=300
+
+" When opening a new line and no filetype-specific indenting is enabled, keep
+" the same indent as the line you're currently on. Useful for READMEs, etc.
+set autoindent
+
+" Allow backspacing over autoindent, line breaks and start of insert action
+set backspace=indent,eol,start
+
+" Use case insensitive search, except when using capital letters
+set ignorecase
+set smartcase
+
+" Instead of failing a command because of unsaved changes, instead raise a
+" dialogue asking if you wish to save changed files.
+set confirm
+
+"show matching braces/brackets
+set showmatch
+
+" Indentation settings for using 4 spaces instead of tabs.
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
+" Enable syntax highlighting
+syntax enable
+" should it be syntax on?
+
+" Always display the status line, even if only one window is displayed
+set laststatus=2
+
+set background=dark
+
+let g:lightline = {
+      \ 'colorscheme': 'ayu_dark',
+      \ }
+
+let ayucolor="dark" 
+
+colorscheme ayu
+
+
+" Always show cursor position
+set ruler
+
+" Highlight the line currently under cursor 
+set cursorline
+
+" show line numbers
+set number
+
+set relativenumber
+
+" Disable annoying sound on errors
+set noerrorbells
+set novisualbell
+
+" Use visual bell instead of beeping when doing something wrong (should flash the screen)
+set visualbell
+
+" Nerd font for MavVim (good to render devicons properly)
+set guifont=MesloLGS\ NF:h15
+
+" filetype on
+
+" filetype plugin on
+
+" filetype indent on
+
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+filetype plugin indent on
+
+" No backup (use Git instead)
+set nobackup
+
+" Dont wrap file lines in editor
+set nowrap
+
+" highlight search terms
+set hlsearch
+
+" show search matches as you type
+set incsearch
+
+
+
