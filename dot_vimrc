@@ -87,7 +87,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 " commets things out
 Plug 'preservim/nerdcommenter'
 
-" automatic bracket/parentheses closing
 Plug 'jiangmiao/auto-pairs'
 
 " honestly not going to use this
