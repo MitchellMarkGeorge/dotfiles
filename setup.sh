@@ -42,6 +42,7 @@ packages=(
     # vim -> macvim installs vim
     neovim
     chezmoi 
+    fzf
 )
 
 # chezmoi -> used to manage dotfiles
