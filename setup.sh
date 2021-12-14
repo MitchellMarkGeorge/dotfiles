@@ -43,6 +43,7 @@ packages=(
     neovim
     chezmoi 
     fzf
+    tree
 )
 
 # chezmoi -> used to manage dotfiles
