@@ -52,7 +52,7 @@ require('lualine').setup({
     sections = {
         lualine_a = {'mode'},
         -- think bout the diagnostics
-        lualine_b = {'branch', {'diagnostics', sources={'nvim_lsp', 'coc'}}},
+        lualine_b = {'branch', 'diagnostics'},
         lualine_c = {'filename'},
         -- dont really need the encoding
         lualine_x = {'encoding', 'filetype'},

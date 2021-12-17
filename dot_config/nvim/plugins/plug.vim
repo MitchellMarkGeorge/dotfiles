@@ -65,7 +65,6 @@ Plug 'hrsh7th/vim-vsnip'
 
 
 " think about this
-" Plug 'jiangmiao/auto-pairs'
 Plug 'cohama/lexima.vim'
 
 Plug 'tpope/vim-commentary'
@@ -74,11 +73,13 @@ Plug 'tpope/vim-commentary'
 
 " telescope
 Plug 'nvim-lua/plenary.nvim'
+" havent really use it...
 Plug 'nvim-telescope/telescope.nvim'
 
 "git colunm 
 Plug 'lewis6991/gitsigns.nvim'
-" for now - havent use this
+" 
+" try to use more oftern
 Plug 'tpope/vim-fugitive'
 
 "icons
@@ -92,13 +93,14 @@ Plug 'voldikss/vim-floaterm'
 " language pack -> think about this
 Plug 'sheerun/vim-polyglot'
 
-" jsx syntax
-Plug 'MaxMEllon/vim-jsx-pretty'
+" jsx syntax -> inside vim-polyglot
+" Plug 'MaxMEllon/vim-jsx-pretty'
 
+" think about
 Plug 'alvan/vim-closetag'
 
-" think about this plugin
-Plug 'ap/vim-css-color'
+Plug 'prettier/vim-prettier', {'do': 'npm install'}
 
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()

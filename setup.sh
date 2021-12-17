@@ -49,12 +49,18 @@ packages=(
 # chezmoi -> used to manage dotfiles
 chezmoi init https://github.com/MitchellMarkGeorge/dotfiles.git
 
-p10k configure 
-
-source ~/.zshrc
+# source ~/.zshrc
 
 echo "Installing packages"
 brew install ${packages[@]}
+
+echo "Installing fonts"
+brew tap homebrew/cask-fonts
+brew install font-fira-code
+brew install font-fira-code-nerd-font
+brew install font-meslo-lg-nerd-font
+brew install font-meslo-lg
+echo "Remember to set font in applications"
 
 apps=(
     appcleaner

@@ -9,5 +9,7 @@ source $HOME/.config/nvim/plugins/completion.lua
 source $HOME/.config/nvim/plugins/gitsigns.lua
 source $HOME/.config/nvim/plugins/lspconfig.lua
 source $HOME/.config/nvim/plugins/telescope.lua
+source $HOME/.config/nvim/plugins/blankline.lua
+"
 " disabling for now
 " source $HOME/.config/nvim/plugins/treesitter.lua

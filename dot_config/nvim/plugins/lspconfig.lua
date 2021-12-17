@@ -25,6 +25,22 @@ local on_attach = function(_, bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
+local servers = {
+  "tsserver",
+  "html",
+  "cssls",
+  "jsonls",
+}
+
+for _, name in pairs(servers) do
+  local server_is_found, server = lsp_installer.get_server(name)
+  if server_is_found then
+    if not server:is_installed() then
+      server:install()
+    end
+  end
+end
+
 lsp_installer.on_server_ready(function(server)
   -- https://github.com/neovim/nvim-lspconfig/wiki/Understanding-setup-%7B%7D
   -- also look at :help vim.lsp.start_client()
