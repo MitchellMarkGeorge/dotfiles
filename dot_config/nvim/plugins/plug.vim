@@ -85,22 +85,17 @@ Plug 'tpope/vim-fugitive'
 "icons
 Plug 'kyazdani42/nvim-web-devicons'
 
-" floating terminal
-" not sure about this
-" might not be usefull if i use tmux
-Plug 'voldikss/vim-floaterm'
-
 " language pack -> think about this
 Plug 'sheerun/vim-polyglot'
-
-" jsx syntax -> inside vim-polyglot
-" Plug 'MaxMEllon/vim-jsx-pretty'
 
 " think about
 Plug 'alvan/vim-closetag'
 
 Plug 'prettier/vim-prettier', {'do': 'npm install'}
 
-Plug 'lukas-reineke/indent-blankline.nvim'
+"is this needed?
+Plug 'folke/trouble.nvim' 
+
+Plug 'phaazon/hop.nvim'
 
 call plug#end()

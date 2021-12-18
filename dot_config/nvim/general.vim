@@ -15,7 +15,7 @@ set wildmenu
 
 " for autocomplete to work properly
 set completeopt=menu,menuone,noselect
-set shortmess+=c
+set shortmess+=c 
 
 " Enable use of the mouse for all modes
 set mouse=a
@@ -81,7 +81,7 @@ set relativenumber
 
 " Disable annoying sound on errors
 set noerrorbells
-set novisualbell
+" set novisualbell
 
 " Use visual bell instead of beeping when doing something wrong (should flash the screen)
 set visualbell

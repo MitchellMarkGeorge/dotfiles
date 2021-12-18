@@ -10,6 +10,8 @@ source $HOME/.config/nvim/plugins/gitsigns.lua
 source $HOME/.config/nvim/plugins/lspconfig.lua
 source $HOME/.config/nvim/plugins/telescope.lua
 source $HOME/.config/nvim/plugins/blankline.lua
+source $HOME/.config/nvim/plugins/trouble.lua
+source $HOME/.config/nvim/plugins/hop.lua
 "
 " disabling for now
 " source $HOME/.config/nvim/plugins/treesitter.lua
