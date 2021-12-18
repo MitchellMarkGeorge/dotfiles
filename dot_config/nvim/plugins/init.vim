@@ -9,7 +9,6 @@ source $HOME/.config/nvim/plugins/completion.lua
 source $HOME/.config/nvim/plugins/gitsigns.lua
 source $HOME/.config/nvim/plugins/lspconfig.lua
 source $HOME/.config/nvim/plugins/telescope.lua
-source $HOME/.config/nvim/plugins/blankline.lua
 source $HOME/.config/nvim/plugins/trouble.lua
 source $HOME/.config/nvim/plugins/hop.lua
 "
