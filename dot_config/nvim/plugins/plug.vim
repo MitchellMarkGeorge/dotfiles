@@ -98,4 +98,6 @@ Plug 'folke/trouble.nvim'
 
 Plug 'phaazon/hop.nvim'
 
+Plug 'tpope/vim-surround'
+
 call plug#end()

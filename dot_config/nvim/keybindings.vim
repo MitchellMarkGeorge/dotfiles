@@ -1,3 +1,9 @@
+" adds trailing ; to the end of a line;
+" think about this
+imap ;; <Esc>A;<Esc>
+
+nnoremap <leader>r :source ~/.config/nvim/init.vim<cr>
+
 " next buffer
 nnoremap <silent> <leader>] :BufferNext<CR> 
 
@@ -20,10 +26,11 @@ nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
 
 "Hop.nvim -> basically EasyMotion
 "is this the best way to use this?
-nnoremap <leader>hw <cmd>HopWord<cr>
-nnoremap <leader>hl <cmd>HopLine<cr>
-nnoremap <leader>hc <cmd>HopChar2<cr>
-nnoremap <leader>hp <cmd>HopPattern<cr>
+nnoremap <leader>w <cmd>HopWord<cr>
+nnoremap <leader>l <cmd>HopLine<cr>
+nnoremap <leader>c <cmd>HopChar2<cr>
+nnoremap <leader>f <cmd>HopWordCurrentLineAC<cr>
+nnoremap <leader>F <cmd>HopWordCurrentLineBC<cr>
 
 "Nvim Tree
 " toggle tree
