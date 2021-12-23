@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Installing Xcode Dependencies"
 xcode-select --install 
 
@@ -69,7 +71,6 @@ apps=(
     iterm2
     visual-studio-code
     zoom
-    google-chrome
     rectangle
     notion
     spotify
