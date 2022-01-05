@@ -1,0 +1,108 @@
+#!/usr/bin/env python3
+import sys
+import os
+from os import path
+from datetime import datetime
+
+# Features
+# create new term folders (with course foldder)
+# create new course in term (course folder)
+# cd into University repo based on course code (try to use levenstein distance)
+# open course outlin (levenstein distance?)
+# list courses
+# help (list commands)
+HOME = path.expanduser('~')
+UNI_CODE_PATH = path.join(HOME, 'University')
+UNI_DOCUMENTS_PATH = path.join(HOME, 'Documents', 'University')
+
+def get_new_term_name():
+    today = datetime.today()
+
+    year = today.year
+
+    month = today.month
+    semester = None
+
+    if month >= 1 and month < 5:
+        semester = "Winter"
+    elif month >= 5 and month < 9:
+        semester = "Summer"
+    else:
+        # should be 9 -> 12
+        semester = "Fall"
+
+    return f"{semester} {year}"
+
+def main(args): #rename
+
+    if not path.exists(UNI_DOCUMENTS_PATH):
+        sys.exit(f"Error: {UNI_DOCUMENTS_PATH} folder is needed")
+
+    if not path.exists(UNI_CODE_PATH):
+        sys.exit(f'''Error: {UNI_CODE_PATH} folder is needed
+                    Run git clone https://github.com/MitchellMarkGeorge/University.github''')
+
+
+    if len(args) == 0:
+        sys.exit("Error: No command given - run `uni help` for list of commands")
+
+
+    command = args[0]
+
+    if command == 'new-term':
+        new_term_name = get_new_term_name()
+        new_term_path = path.join(UNI_DOCUMENTS_PATH, new_term_name)
+
+        if path.exists(new_term_path):
+            sys.exit(f"Error: {new_term_path} already exists")
+
+        num_of_courses = 0
+
+        if len(args) == 1: #meaning only the command was given
+            num_of_courses = input("Number of courses: ")
+            if num_of_courses.isdigit() == False:
+                sys.exit("Error: Number of courses must an integer")
+
+            num_of_courses = int(num_of_courses)
+
+        else:
+            num_of_courses = args[1]
+            if num_of_courses.isdigit() == False:
+                sys.exit("Error: Number of courses must an integer")
+            num_of_courses = int(num_of_courses)
+
+        for i in range(num_of_courses):
+            # should technically test if alpha
+            course_name = input(f"Enter course name ({i + 1}): ")
+            os.makedirs(path.join(new_term_path, course_name))
+            print(f"{course_name} directory created")
+
+
+    elif command == 'new-course':
+        new_term_name = get_new_term_name()
+        new_term_path = path.join(UNI_DOCUMENTS_PATH, new_term_name)
+
+        if path.exists(new_term_path) == False:
+            sys.exit(f"Error: {new_term_path} does not exist - run `uni new-term` first")
+
+        new_course = ""
+        if len(args) == 1:
+            new_course = input("Enter course name: ")
+        else:
+            new_course = args[1]
+
+        os.makedirs(path.join(new_term_path, new_course))
+        print(f"{new_course} directory created")
+
+    elif command == 'cd':
+        print("cd")
+
+    else:
+        sys.exit(f"Error: No command with name `{command}`")
+
+
+
+
+
+
+main(sys.argv[1:])  #only want the aditional arguments   

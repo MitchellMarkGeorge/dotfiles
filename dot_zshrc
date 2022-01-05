@@ -110,3 +110,4 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # this is for dev
 # [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+alias uni=~/uni
