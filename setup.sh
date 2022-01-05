@@ -7,6 +7,8 @@ echo "Installing Homebrew"
 # should i instead check if it is installed?
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# can only call brew immediatley after install in Intel chips
+
 echo "Installing Git"
 brew install git
 
@@ -49,12 +51,16 @@ packages=(
 )
 
 # chezmoi -> used to manage dotfiles
-chezmoi init https://github.com/MitchellMarkGeorge/dotfiles.git
 
 # source ~/.zshrc
 
 echo "Installing packages"
 brew install ${packages[@]}
+
+chezmoi init https://github.com/MitchellMarkGeorge/dotfiles.git
+
+# this makes the uni script executable
+chmod +x ./uni
 
 echo "Installing fonts"
 brew tap homebrew/cask-fonts
