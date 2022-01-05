@@ -30,6 +30,7 @@ local servers = {
   "html",
   "cssls",
   "jsonls",
+  "pyright"
 }
 
 for _, name in pairs(servers) do
