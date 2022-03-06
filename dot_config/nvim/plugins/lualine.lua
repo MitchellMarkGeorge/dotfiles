@@ -42,24 +42,43 @@ local minnimal_ayu = {
 
 
 
-require('lualine').setup({
-    options = {
-        -- theme = 'vscode'
-        theme = minnimal_ayu,
-        section_separators = '' , component_separators = ''
-    },
-    -- https://github.com/nvim-lualine/lualine.nvim#default-config
-    sections = {
-        lualine_a = {'mode'},
-        -- think bout the diagnostics
-        lualine_b = {'branch', 'diagnostics'},
-        lualine_c = {'filename'},
-        -- dont really need the encoding
-        lualine_x = {'encoding', 'filetype'},
-        lualine_y = {'progress'},
-        lualine_z = {'location'}
-      },
-})
+-- require('lualine').setup({
+--     options = {
+--         -- theme = 'vscode'
+--         theme = minnimal_ayu,
+--         section_separators = '' , component_separators = ''
+--     },
+--     -- https://github.com/nvim-lualine/lualine.nvim#default-config
+--     sections = {
+--         lualine_a = {'mode'},
+--         -- think bout the diagnostics
+--         lualine_b = {'branch', 'diagnostics'},
+--         lualine_c = {'filename'},
+--         -- dont really need the encoding
+--         lualine_x = {'encoding', 'filetype'},
+--         lualine_y = {'progress'},
+--         lualine_z = {'location'}
+--       },
+-- })
+--
+require('lualine').setup {
+  options = {
+    theme = "onedark",
+    section_separators = '' , component_separators = ''
+  },
+
+  sections = {
+    lualine_a = {'mode'},
+    -- think bout the diagnostics
+    lualine_b = {'branch', 'diagnostics'},
+    lualine_c = {'filename'},
+    -- dont really need the encoding
+    lualine_x = {'encoding', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+
+}
 
 require("lsp-colors").setup({
     Error = "#db4b4b",

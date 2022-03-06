@@ -8,7 +8,6 @@ endif
 
 
 
-
 " inspired by https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 " taken from https://github.com/mutecipher/dotfiles/blob/main/config/nvim/plugins/plug.vim
 
@@ -16,8 +15,11 @@ endif
 call plug#begin(stdpath('data') . '/plugged')
 
 " colorscheme
-Plug 'ayu-theme/ayu-vim'
-
+" Plug 'ayu-theme/ayu-vim'
+Plug 'joshdick/onedark.vim'
+Plug 'ray-x/lsp_signature.nvim'
+Plug 'akinsho/toggleterm.nvim'
+Plug 'onsails/lspkind-nvim'
 
 " meant to be faster than vim airline/ vim lightline
 " think about this
@@ -25,7 +27,8 @@ Plug 'nvim-lualine/lualine.nvim'
 
 " love this - use bufferline.nvim
 " https://github.com/akinsho/bufferline.nvim
-Plug 'romgrk/barbar.nvim'
+" Plug 'romgrk/barbar.nvim'
+Plug 'akinsho/bufferline.nvim'
 " colors for lsp diagnostics
 Plug 'folke/lsp-colors.nvim'
 
@@ -93,7 +96,6 @@ Plug 'alvan/vim-closetag'
 
 Plug 'prettier/vim-prettier', {'do': 'npm install'}
 
-"is this needed?
 Plug 'folke/trouble.nvim' 
 
 Plug 'phaazon/hop.nvim'

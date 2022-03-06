@@ -18,9 +18,10 @@ source $HOME/.config/nvim/keybindings.vim
 " and change cursor color to #ffae57
 " enable Smart box cursor color
 " hide scrollbar
-let ayucolor="dark" 
-colorscheme ayu
-
+" let ayucolor="dark" 
+" colorscheme ayu
+" Vim
+colorscheme onedark
 
 " set background=dark
 

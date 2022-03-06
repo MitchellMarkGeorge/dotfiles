@@ -1,25 +1,38 @@
+nmap <Space> <Nop>
+let mapleader = " "
+let maplocalleader = " "
+" let mapleader = "\<Space>" 
+
 " adds trailing ; to the end of a line;
-" think about this
 imap ;; <Esc>A;<Esc>
+" usefull for python
+imap :: <Esc>A:<Esc>
 
-nnoremap <leader>r :source ~/.config/nvim/init.vim<cr>
+inoremap jk <Esc>
+inoremap kj <Esc>
+inoremap jj <Esc>
 
+nnoremap <C-j> <C-w>j 
+nnoremap <C-h> <C-w>h 
+nnoremap <C-k> <C-w>k 
+nnoremap <C-l> <C-w>l 
+
+
+nnoremap <leader>r :source $MYVIMRC<cr>
 " next buffer
-nnoremap <silent> <leader>] :BufferNext<CR> 
+nnoremap <silent> L :BufferLineCycleNext<CR> 
 
-" previous buffer (chose v as it is is before b\more ergonomic)
-nnoremap <silent> <leader>[ :BufferPrevious<CR> 
+" previous buffer
+nnoremap <silent> H :BufferLineCyclePrev<CR> 
 
-" close buffer
-nnoremap <silent> <leader>bb :BufferClose<CR> 
-" think about this one
-nnoremap <silent> <leader>bc :BufferCloseAllButCurrent<CR> 
+" close buffer - not woking for some reason
+nnoremap <silent> <leader>b :BufferLinePickClose<CR> 
 
-nnoremap <silent> <leader>b1 :BufferGoto 1<CR> 
-nnoremap <silent> <leader>b2 :BufferGoto 2<CR> 
-nnoremap <silent> <leader>b3 :BufferGoto 3<CR> 
-nnoremap <silent> <leader>b4 :BufferGoto 4<CR>
-nnoremap <silent> <leader>b5 :BufferGoto 5<CR> 
+nnoremap <silent> <leader>1 :BufferLineGoToBuffer 1<CR> 
+nnoremap <silent> <leader>2 :BufferLineGoToBuffer 2<CR> 
+nnoremap <silent> <leader>3 :BufferLineGoToBuffer 3<CR> 
+nnoremap <silent> <leader>4 :BufferLineGoToBuffer 4<CR>
+nnoremap <silent> <leader>5 :BufferLineGoToBuffer 5<CR> 
 
 nnoremap <leader>xx <cmd>TroubleToggle<cr>
 nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
@@ -44,8 +57,16 @@ nnoremap <silent> <leader>ff :Telescope find_files<cr>
 nnoremap <silent> <leader>fb :Telescope buffers<cr>
 
 "remove search hilighting (after search)
-nnoremap <silent> <leader>nh :noh<cr>
+nnoremap <silent> <leader>h :noh<cr>
 
 " only writes to the file if it has been modified
 nnoremap <leader>s :update<cr>
+
+" vim can't realy reacognize cntrl + arrow leys so used arrow keys
+nnoremap <S-Up> :resize -2<cr>
+nnoremap <S-Down> :resize +2<cr>
+nnoremap <S-Left> :vertical resize -2<cr>
+nnoremap <S-Right> :vertical resize +2<cr>
+" useful for closing splits
+nnoremap <leader>q :q<cr>
 

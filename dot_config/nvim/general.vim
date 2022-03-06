@@ -8,6 +8,8 @@ set nocompatible
 " needed to get terminal gui colors working correctly
 set termguicolors
 
+" set clipboard
+set clipboard=unnamedplus
 " Under the command mode, the bottom-layer operation instructions will be completed automatically by pressing the Tab key. 
 "The first time you press Tab, a list of all matched operation instructions will be displayed; and the second time you press Tab, each instruction will be selected in turn.
 set wildmenu
