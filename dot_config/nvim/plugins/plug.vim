@@ -20,6 +20,9 @@ Plug 'joshdick/onedark.vim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'onsails/lspkind-nvim'
+Plug 'simrat39/symbols-outline.nvim'
+
+Plug 'LunarVim/Colorschemes'
 
 " meant to be faster than vim airline/ vim lightline
 " think about this

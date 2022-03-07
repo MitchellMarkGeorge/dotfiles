@@ -1,5 +1,6 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+-- limit completions to 10
 -- need to handle tab completion
 -- look into this: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
 -- and this: https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion (might just copy this one)
@@ -10,17 +11,13 @@ cmp.setup({
                 maxwidth = 50,
                 mode = 'symbol_text'
             }),
-        before = function (entry, vim_item)
-           return vim_item 
-        end
     },
   snippet = {
     expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) 
+        vim.fn["vsnip#anonymous"](args.body)
     end,
   },
   mapping = {
-    
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-k>'] = cmp.mapping.select_prev_item(),
     ['<C-n>'] = cmp.mapping.select_next_item(),
@@ -54,13 +51,12 @@ cmp.setup({
       end
     end
   },
-  sources = cmp.config.sources({
+  sources = {
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
-  }, {
     { name = 'buffer' },
-    { name = 'path' }
-  }),
+    { name = 'path' },
+  },
   documentation = {
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
   }

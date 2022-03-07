@@ -70,3 +70,5 @@ nnoremap <S-Right> :vertical resize +2<cr>
 " useful for closing splits
 nnoremap <leader>q :q<cr>
 
+nnoremap <silent> <leader>o :SymbolsOutline<cr>
+
