@@ -64,7 +64,8 @@ local minnimal_ayu = {
 require('lualine').setup {
   options = {
     theme = "onedark",
-    section_separators = '' , component_separators = ''
+    section_separators = '' , component_separators = '',
+    disabled_filetypes = {"NvimTree", "Outline"}
   },
 
   sections = {

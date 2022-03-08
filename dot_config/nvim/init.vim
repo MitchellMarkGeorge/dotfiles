@@ -25,8 +25,22 @@ source $HOME/.config/nvim/keybindings.vim
 " colorscheme darkplus
 
 " set background=dark
+" if (has("autocmd"))
+"   augroup colorextend
+"     autocmd!
+"     " Make `Function`s bold in GUI mode
+"     autocmd ColorScheme * call onedark#extend_highlight("Function", { "gui": "bold" })
+"     " Override the `Statement` foreground color in 256-color mode
+"     " autocmd ColorScheme * call onedark#extend_highlight("Statement", { "fg": { "cterm": 128 } })
+"     " Override the `Identifier` background color in GUI mode
+"     " autocmd ColorScheme * call onedark#extend_highlight("Identifier", { "bg": { "gui": "#333333" } })
+"   augroup END
+" endif
 
-colorscheme onedark" gray
+
+colorscheme onedarker
+" highliting for completion
+" gray
 highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
 " blue
 highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6 gui=bold

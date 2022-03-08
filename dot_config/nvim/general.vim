@@ -5,8 +5,29 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
 
+" adds space for signs
+set signcolumn=yes
+
+" height of pop up/ completion
+set pumheight=10
+
 " needed to get terminal gui colors working correctly
 set termguicolors
+
+"set terminal title
+set title
+
+" force right splits for vertical splits
+set splitright
+
+" force below splits for horizontal splits
+set splitbelow
+
+"number of screen lines to keep above and below the cursor
+set scrolloff=8
+
+"number of screen lines to keep left and right the cursor
+set sidescrolloff=8
 
 " set clipboard
 set clipboard=unnamedplus "allows use with syste clipboard - changes behaviour of p though

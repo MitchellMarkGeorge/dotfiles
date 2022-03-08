@@ -1,3 +1,30 @@
 -- vim.g.symbol_outline = {
-
+--     symbols = {
+--             File = {icon = "", hl = "Include"},
+--             Module = {icon = "", hl = "Include"},
+--             Namespace = {icon = "", hl = "Include"},
+--             Package = {icon = "", hl = "Include"},
+--             Class = {icon = "𝓒", hl = "Type"},
+--             Method = {icon = "ƒ", hl = "Method"},
+--             Property = {icon = "", hl = "Method"},
+--             Field = {icon = "", hl = "Identifier"},
+--             Constructor = {icon = "", hl = "Methid"},
+--             Enum = {icon = "ℰ", hl = "Type"},
+--             Interface = {icon = "ﰮ", hl = "Type"},
+--             Function = {icon = "", hl = "Function"},
+--             Variable = {icon = "", hl = "Constant"},
+--             Constant = {icon = "", hl = "Constant"},
+--             String = {icon = "𝓐", hl = "String"},
+--             Number = {icon = "#", hl = "Number"},
+--             Boolean = {icon = "⊨", hl = "Boolean"},
+--             Array = {icon = "", hl = "Constant"},
+--             Object = {icon = "⦿", hl = "Type"},
+--             Key = {icon = "🔐", hl = "Type"},
+--             Null = {icon = "NULL", hl = "Type"},
+--             EnumMember = {icon = "", hl = "Structure"},
+--             Struct = {icon = "𝓢", hl = "Type"},
+--             Event = {icon = "🗲", hl = "Type"},
+--             Operator = {icon = "+", hl = "Operator"},
+--             TypeParameter = {icon = "𝙏", hl = "Type"}
+--         }
 -- }
