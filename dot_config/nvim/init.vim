@@ -38,7 +38,7 @@ source $HOME/.config/nvim/keybindings.vim
 " endif
 
 
-colorscheme onedarker
+colorscheme onedark
 " highliting for completion
 " gray
 highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
@@ -49,11 +49,14 @@ highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6 gui=bold
 highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE gui=bold
 highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE gui=bold
 highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE gui=bold
+highlight! CmpItemKindFile guibg=NONE guifg=#9CDCFE gui=bold
 " pink
 highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0 gui=bold
 highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0 gui=bold
+highlight! CmpItemKindModule guibg=NONE guifg=#C586C0 gui=bold
 " front
 highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4 gui=bold
 highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4 gui=bold
 highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4 gui=bold
 " default cursor -> #c7c7c7
+

@@ -1,10 +1,7 @@
 local cmp = require('cmp')
 local lspkind = require('lspkind')
--- limit completions to 10
--- need to handle tab completion
 -- look into this: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings
 -- and this: https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion (might just copy this one)
--- snippets should open with <C-Space> (dont want to complete them with tabs)
 cmp.setup({
     formatting = {
         format = lspkind.cmp_format({
