@@ -1,6 +1,5 @@
 " This must be first, because it changes other options as side effect
 set nocompatible
-
 "function to create swap and backup folders
 " make sure this is correct!
 function! EnsureDirExists (dir)
@@ -31,73 +30,31 @@ call EnsureDirExists($HOME.'/.vim_swaps')
 call EnsureDirExists($HOME.'/.vim_backups')
 
 
-" can also use this as well
-" if !isdirectory("/my/directory")
-"     call mkdir("/my/directory", "p")
-" endif
-
-
-
-" function! EnsureDirExists (dir)
-"   if !isdirectory(a:dir)
-"     " check is built in mkdir exists
-"     if exists("*mkdir")
-"      
-"       try
-"         call mkdir(a:dir,'p')
-"         catch /.*/
-"             echo 'Error making '. a:dir
-"         endtry
-"         echo "Created directory: " . a:dir
-"         else
-"         echo "Please create directory: " . a:dir
-"         endif
-"     endif
-" endfunction
-
 call plug#begin('~/.vim/plugged')
 
-" dont want to have too many plugins
-
 " theme
-Plug 'ayu-theme/ayu-vim'
-
-" post install (yarn install | npm install) then load plugin only for editing supported files
-" https://github.com/prettier/vim-prettier
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-
-
+Plug 'joshdick/onedark.vim'
+" Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+" filetree
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" devicons
+Plug 'ryanoasis/vim-devicons'
 " statusline
-Plug 'itchyny/lightline.vim'
-
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" gutter for git icons
 Plug 'airblade/vim-gitgutter'
-
-" ALL I NEED IS LINTING AND FORMATTING
-
-"THINK ABOUT THIS
-"autocomplete stuff
-" https://github.com/maralla/completor.vim
-"
-" will disable this for now
-"Plug 'maralla/completor.vim'
-
-" fuzzy file and buffer finder
-Plug 'ctrlpvim/ctrlp.vim'
-
 " commets things out
-Plug 'preservim/nerdcommenter'
-
-Plug 'jiangmiao/auto-pairs'
-
+Plug 'tpope/vim-commentary'
+" autoclose parathenses and stuff 
+Plug 'cohama/lexima.vim'
 " honestly not going to use this
 Plug 'tpope/vim-fugitive'
-" is this needed
-Plug 'MaxMEllon/vim-jsx-pretty'
+" language pack
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
-
-" https://github.com/airblade/vim-gitgutter#getting-started (also controls
-" frequency of swapfile writes)
 
 " needed to get terminal gui colors working correctly
 set termguicolors
@@ -115,7 +72,6 @@ augroup END
 " Under the command mode, the bottom-layer operation instructions will be completed automatically by pressing the Tab key. 
 "The first time you press Tab, a list of all matched operation instructions will be displayed; and the second time you press Tab, each instruction will be selected in turn.
 set wildmenu
-set wildmode=longest:list,full
 
 " Enable use of the mouse for all modes
 set mouse=a
@@ -125,6 +81,20 @@ set hidden
 
 " Show partial commands in the last line of the screen
 set showcmd
+
+" set terminal title
+set title
+
+set signcolumn=yes
+
+set splitright
+set splitbelow
+
+set scrolloff=8
+set sidescrolloff=8
+
+"uses system clipboard
+set clipboard=unnamedplus
 
 " show current mode (is this needed)
 " set showmode
@@ -162,21 +132,17 @@ set softtabstop=4
 
 " Enable syntax highlighting
 syntax enable
-" should it be syntax on?
 
 " Always display the status line, even if only one window is displayed
 set laststatus=2
 
 set background=dark
 
-let g:lightline = {
-      \ 'colorscheme': 'ayu_dark',
-      \ }
+" let g:lightline = {
+"       \ 'colorscheme': 'onedark',
+"       \ }
 
-let ayucolor="dark" 
-
-colorscheme ayu
-
+colorscheme onedark
 
 " Always show cursor position
 set ruler
@@ -192,18 +158,7 @@ set relativenumber
 " Disable annoying sound on errors
 set noerrorbells
 set novisualbell
-
-" Use visual bell instead of beeping when doing something wrong (should flash the screen)
-set visualbell
-
 " Nerd font for MavVim (good to render devicons properly)
-set guifont=MesloLGS\ NF:h15
-
-" filetype on
-
-" filetype plugin on
-
-" filetype indent on
 
 " Attempt to determine the type of a file based on its name and possibly its
 " contents. Use this to allow intelligent auto-indenting for each filetype,
@@ -222,5 +177,47 @@ set hlsearch
 " show search matches as you type
 set incsearch
 
+let g:airline_theme='onedark'
+let g:airline#extensions#tabline#enabled = 1
 
+" Keybindings
+" will only delay if ther is an impap <space> mapping
+nnoremap <Space> <Nop>
+let mapleader = " "
+let maplocalleader = " "
+
+" adds trailing ; to the end of a line;
+imap ;; <Esc>A;<Esc>
+" usefull for python
+imap :: <Esc>A:<Esc>
+
+inoremap jk <Esc>
+inoremap kj <Esc>
+inoremap jj <Esc>
+
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <silent> L :bnext<cr>
+nnoremap <silent> H :bprevious<cr>
+
+nnoremap <silent> <leader>tt :NERDTreeToggle<CR>
+
+"remove search hilighting (after search)
+nnoremap <silent> <leader>h :noh<cr>
+
+nnoremap <silent> <leader>b :buffers<cr>
+
+" only writes to the file if it has been modified
+nnoremap <leader>s :update<cr>
+
+" vim can't realy reacognize cntrl + arrow leys so used arrow keys
+nnoremap <S-Up> :resize -2<cr>
+nnoremap <S-Down> :resize +2<cr>
+nnoremap <S-Left> :vertical resize -2<cr>
+nnoremap <S-Right> :vertical resize +2<cr>
+" useful for closing splits
+nnoremap <leader>q :q!<cr>
 
