@@ -14,5 +14,6 @@ source $HOME/.config/nvim/plugins/bufferline.lua
 source $HOME/.config/nvim/plugins/lsp_signature.lua
 source $HOME/.config/nvim/plugins/symbol_outline.lua
 source $HOME/.config/nvim/plugins/nvimtree.lua
+source $HOME/.config/nvim/plugins/nvim-autopairs.lua
 " disabling for now
 " source $HOME/.config/nvim/plugins/treesitter.lua

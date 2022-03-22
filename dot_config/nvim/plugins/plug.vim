@@ -16,7 +16,9 @@ call plug#begin(stdpath('data') . '/plugged')
 
 " colorscheme
 " Plug 'ayu-theme/ayu-vim'
-Plug 'joshdick/onedark.vim'
+" Plug 'joshdick/onedark.vim'
+" Has treesitter support
+Plug 'navarasu/onedark.nvim'
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'onsails/lspkind-nvim'
@@ -71,7 +73,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 
 " think about this
-Plug 'cohama/lexima.vim'
+Plug 'windwp/nvim-autopairs'
 
 Plug 'tpope/vim-commentary'
 " can also use

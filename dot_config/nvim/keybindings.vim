@@ -1,3 +1,4 @@
+" will only delay if ther is an impap <space> mapping
 nmap <Space> <Nop>
 let mapleader = " "
 let maplocalleader = " "
@@ -25,8 +26,8 @@ nnoremap <silent> L :BufferLineCycleNext<CR>
 " previous buffer
 nnoremap <silent> H :BufferLineCyclePrev<CR> 
 
-" close buffer - not woking for some reason
-nnoremap <silent> <leader>b :BufferLinePickClose<CR> 
+" close buffer 
+nnoremap <silent> <leader>b :bdelete<CR> 
 
 nnoremap <silent> <leader>1 :BufferLineGoToBuffer 1<CR> 
 nnoremap <silent> <leader>2 :BufferLineGoToBuffer 2<CR> 
@@ -68,7 +69,7 @@ nnoremap <S-Down> :resize +2<cr>
 nnoremap <S-Left> :vertical resize -2<cr>
 nnoremap <S-Right> :vertical resize +2<cr>
 " useful for closing splits
-nnoremap <leader>q :q<cr>
+nnoremap <leader>q :q!<cr>
 
 nnoremap <silent> <leader>o :SymbolsOutline<cr>
 

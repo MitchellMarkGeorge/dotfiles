@@ -37,7 +37,9 @@ source $HOME/.config/nvim/keybindings.vim
 "   augroup END
 " endif
 
-
+let g:onedark_config = {
+    \ 'style': 'darker',
+\}
 colorscheme onedark
 " highliting for completion
 " gray
