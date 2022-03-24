@@ -7,7 +7,7 @@ let maplocalleader = " "
 " adds trailing ; to the end of a line;
 imap ;; <Esc>A;<Esc>
 " usefull for python
-imap :: <Esc>A:<Esc>
+" imap :: <Esc>A:<Esc>
 
 inoremap jk <Esc>
 inoremap kj <Esc>

@@ -64,24 +64,25 @@ local minnimal_ayu = {
 require('lualine').setup {
   options = {
     theme = "onedark",
-    section_separators = '' , component_separators = '',
+    section_separators = { left = '', right = '' },
+    component_separators = '',
     disabled_filetypes = {"NvimTree", "Outline"}
   },
 
   sections = {
-    lualine_a = {'mode'},
+    lualine_a = { {'mode', separator = { left = '' }, right_padding = 2 }},
     -- think bout the diagnostics
     lualine_b = {'branch', 'diagnostics'},
     lualine_c = {'filename'},
     -- dont really need the encoding
     lualine_x = {'encoding', 'filetype'},
     lualine_y = {'progress'},
-    lualine_z = {'location'}
+    lualine_z = { {'location', separator = { right = '' }, left_padding = 2 } },
   },
 
 }
 
-require("lsp-colors").setup({
+require("lsp-colors").setup({ -- not sure this is needed anymore
     Error = "#db4b4b",
     Warning = "#e0af68",
     Information = "#0db9d7",
