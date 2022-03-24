@@ -53,6 +53,10 @@ Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-fugitive'
 " language pack
 Plug 'sheerun/vim-polyglot'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 call plug#end()
 
@@ -67,6 +71,10 @@ set directory=$HOME/.vim_swaps//
 augroup JsonToJsonc
     autocmd! FileType json set filetype=jsonc
 augroup END
+
+inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 
 
 " Under the command mode, the bottom-layer operation instructions will be completed automatically by pressing the Tab key. 
@@ -84,6 +92,8 @@ set showcmd
 
 " set terminal title
 set title
+
+set pumheight=10
 
 set signcolumn=yes
 
@@ -177,7 +187,7 @@ set hlsearch
 " show search matches as you type
 set incsearch
 
-let g:airline_theme='onedark'
+let g:airline_theme='deus'
 let g:airline#extensions#tabline#enabled = 1
 
 " Keybindings
