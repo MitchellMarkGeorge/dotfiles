@@ -73,3 +73,6 @@ nnoremap <leader>q :q!<cr>
 
 nnoremap <silent> <leader>o :SymbolsOutline<cr>
 
+" used to thos because of vim-prettier
+nnoremap <silent> <leader>p <cmd>lua vim.lsp.buf.formatting()<cr>
+

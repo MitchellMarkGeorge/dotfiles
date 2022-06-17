@@ -54,6 +54,12 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
+" for formatting and diagnostics
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
+" for lsp ui stuff
+Plug 'glepnir/lspsaga.nvim', { 'branch': 'main' }
+
 " Autocomplete
 " seems to be working
 " might still consider coq.nvim
@@ -97,9 +103,9 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'sheerun/vim-polyglot'
 
 " think about
-Plug 'alvan/vim-closetag'
+" Plug 'alvan/vim-closetag'
 
-Plug 'prettier/vim-prettier', {'do': 'npm install'}
+" Plug 'prettier/vim-prettier', {'do': 'npm install'}
 
 Plug 'folke/trouble.nvim' 
 

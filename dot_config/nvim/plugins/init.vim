@@ -15,5 +15,7 @@ source $HOME/.config/nvim/plugins/lsp_signature.lua
 source $HOME/.config/nvim/plugins/symbol_outline.lua
 source $HOME/.config/nvim/plugins/nvimtree.lua
 source $HOME/.config/nvim/plugins/nvim-autopairs.lua
+source $HOME/.config/nvim/plugins/null-ls.lua
+source $HOME/.config/nvim/plugins/lspsaga.lua
 " disabling for now
 " source $HOME/.config/nvim/plugins/treesitter.lua
