@@ -45,7 +45,9 @@ return packer.startup(function(use)
     use 'kyazdani42/nvim-tree.lua'
 
     -- LSP
-    use 'williamboman/nvim-lsp-installer'
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
+    -- use 'williamboman/nvim-lsp-installer'
     use 'neovim/nvim-lspconfig'
 
     -- for formatting and diagnostics
@@ -94,6 +96,8 @@ return packer.startup(function(use)
     use 'folke/trouble.nvim' 
 
     use 'tpope/vim-surround'
+
+    use "mfussenegger/nvim-jdtls"
 
   
     -- Automatically set up your configuration after cloning packer.nvim

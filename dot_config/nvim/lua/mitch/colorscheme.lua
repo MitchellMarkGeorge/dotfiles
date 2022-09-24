@@ -1,11 +1,9 @@
--- Lua
 require('onedark').setup {
     style = 'darker'
 }
 require('onedark').load()
 
 -- hilighing for completion items
-
 vim.cmd([[
     highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
     " blue

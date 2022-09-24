@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
+-- local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -8,7 +8,6 @@ local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 -- exit insert mode
 keymap("i", "jk", "<Esc>", opts)
@@ -29,6 +28,9 @@ keymap("n", "<S-Up>", ":resize -2<cr>", opts)
 keymap("n", "<S-Down>", ":resize +2<cr>", opts)
 keymap("n", "<S-Left>", ":vertical resize -2<cr>", opts)
 keymap("n", "<S-Right>", ":vertical resize +2<cr>", opts)
+
+keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
+keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 
 -- next buffer
 keymap("n", "<S-l>", " :BufferLineCycleNext<CR>", opts)
@@ -56,6 +58,10 @@ keymap("n", "<leader>h", ":noh<cr>", opts)
 -- save file if updated
 keymap("n", "<leader>s", ":update<cr>", opts)
 
+-- "openi" lines without going into insert mode
+keymap("n", "<leader>o", "o<esc>", opts)
+keymap("n", "<leader>O", "O<esc>", opts)
+
 -- move text up and down
 keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
 keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
@@ -63,7 +69,7 @@ keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
 -- Move text up and down in visual mode
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- keymap("v", "p", '"_dP', opts)
 
 -- format code
 keymap("n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)

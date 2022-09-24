@@ -1,4 +1,5 @@
-local lsp_installer = require "nvim-lsp-installer"
+require("mason").setup()
+local lsp_installer = require "mason-lspconfig"
 local lspconfig = require "lspconfig"
 
 local servers = {
@@ -7,7 +8,8 @@ local servers = {
   "cssls",
   "jsonls",
   "sumneko_lua",
-  "pyright"
+  "pyright",
+	"clangd"
 }
 
 lsp_installer.setup({
